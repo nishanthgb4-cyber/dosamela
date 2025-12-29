@@ -1,179 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DosaMela | Live Dosa, Pure Joy!</title>
   <meta name="description" content="DosaMela offers authentic South Indian live dosa catering for private events." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
   <style>
     :root {
-      --primary:#B23A1D; --secondary:#F4C430; --dark:#2A1A12; --light:#FFF8F2; --card:#fff;
+      --primary: #B23A1D;
+      --secondary: #F4C430;
+      --dark: #2A1A12;
+      --light: #FFF8F2;
+      --card: #fff;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Poppins',sans-serif;background:var(--light);color:var(--dark);line-height:1.6}
 
-    header{padding:1rem 2rem;background:#fff;position:sticky;top:0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-    .brand{font-weight:800;font-size:1.8rem}
-.brand-link{
-  font-family:'Playfair Display',serif;
-  color:#0B7A75;
-  text-decoration:none;
-  letter-spacing:.6px;
-  position:relative;
-  display:inline-block;
-  font-weight:700;
-}
-.brand-link::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:100%;
-  height:5px;
-  border-radius:999px;
-  background: rgba(244,196,48,.95);
-  transform: scaleX(0.65);
-  transform-origin:left;
-  transition: transform .18s ease, opacity .18s ease;
-  opacity:.9;
-}
-.brand-link:hover{opacity:.92}
-.brand-link:hover::after{transform: scaleX(1);opacity:1}
-.brand-link:active{transform: translateY(1px)}
-.brand-link:hover{opacity:.85}
-.home-btn{
-  padding:.48rem 1.02rem;
-  border-radius:999px;
-  border:1px solid rgba(11,122,117,.65);
-  background: rgba(255,247,238,.9);
-  color:#0B7A75;
-  font-weight:700;
-  cursor:pointer;
-  transition: transform .15s ease, background .15s ease, color .15s ease, box-shadow .15s ease;
-  box-shadow: 0 10px 22px rgba(0,0,0,.06);
-}
-.home-btn:hover{background:#0B7A75;color:#fff;transform: translateY(-1px);box-shadow:0 14px 28px rgba(11,122,117,.18)}
-.home-btn:active{transform: translateY(0)}
-.home-btn:hover{background:#0B7A75;color:#fff}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-    .hero{padding:4rem 2rem;text-align:center;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}
-    .hero h1{font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:.75rem}
-    .hero p{max-width:760px;margin:auto;opacity:.95}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6
+    }
 
-    .actions{margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .btn{padding:.7rem 1.3rem;border-radius:999px;font-weight:600;border:2px solid #fff;background:transparent;color:#fff;cursor:pointer}
-    .btn.solid{background:rgba(42,26,18,.25);border:none}
-    .btn:hover{opacity:.95}
+    header {
+      padding: 1rem 2rem;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .05)
+    }
 
-    .section{padding:3.5rem 2rem;max-width:900px;margin:auto;display:none}
-    .section.active{display:block}
-    .section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+    .brand {
+      font-weight: 800;
+      font-size: 1.8rem
+    }
 
-    .menu-item{background:var(--card);border-radius:16px;padding:1.2rem;margin-bottom:1rem;box-shadow:0 10px 20px rgba(0,0,0,.05)}
-    .menu-item strong{display:block}
+    .brand-link {
+      display: inline-block;
+      transition: opacity .2s ease;
+    }
 
-    .contact-card{background:var(--card);border-radius:16px;padding:1.4rem;box-shadow:0 10px 20px rgba(0,0,0,.05)}
-    .contact-card a{color:var(--primary);font-weight:700;text-decoration:none}
+    .brand-link:hover {
+      opacity: .8
+    }
 
-    footer{background:var(--dark);color:#fff;text-align:center;padding:2rem}
-    .social{display:flex;justify-content:center;margin-top:.75rem}
-    .social a{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(244,196,48,.15);border:1px solid rgba(244,196,48,.3);color:var(--secondary)}
-    .social svg{width:22px;height:22px;fill:currentColor}
+    .brand-link:active {
+      transform: scale(0.98)
+    }
 
-    .wa-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:700;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.2);z-index:999}
+    .home-btn {
+      padding: .5rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
 
-    @media(max-width:600px){.hero h1{font-size:2.2rem}}
+    .home-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(178, 58, 29, .2)
+    }
+
+    .home-btn:active {
+      transform: translateY(1px)
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: .75rem
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      opacity: .95
+    }
+
+    .actions {
+      margin-top: 1.75rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      padding: .7rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      cursor: pointer
+    }
+
+    .btn.solid {
+      background: rgba(42, 26, 18, .25);
+      border: none
+    }
+
+    .btn:hover {
+      opacity: .95
+    }
+
+    .section {
+      padding: 3.5rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      display: none
+    }
+
+    .section.active {
+      display: block
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem
+    }
+
+    .menu-item {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .05)
+    }
+
+    .menu-item strong {
+      display: block
+    }
+
+    .contact-card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 1.4rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .05)
+    }
+
+    .contact-card a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none
+    }
+
+    footer {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 2rem
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      margin-top: .75rem
+    }
+
+    .social a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(244, 196, 48, .15);
+      border: 1px solid rgba(244, 196, 48, .3);
+      color: var(--secondary)
+    }
+
+    .social svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
+      z-index: 999
+    }
+
+    @media(max-width:600px) {
+      .hero h1 {
+        font-size: 2.2rem
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="header-inner" style="display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:auto;">
-    <div class="brand">
-      <a href="#" onclick="goHome();return false;" class="brand-link">DosaMela</a>
+  <header>
+    <div class="header-inner"
+      style="display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:auto;">
+      <div class="brand">
+        <a href="#" onclick="goHome();return false;" class="brand-link">
+          <img src="dosa_mela_icon.jpg" alt="DosaMela" style="height: 5rem; vertical-align: middle;">
+        </a>
+      </div>
+      <button class="home-btn" onclick="goHome();">Home</button>
     </div>
-    <button class="home-btn" onclick="goHome();">Home</button>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <h1>Live Dosa, Pure Joy!</h1>
-  <p>Authentic South Indian Live Dosa Catering for Private Events</p>
-  <div class="actions">
-    <button class="btn solid" onclick="showSection('menu')">View Menu</button>
-    <button class="btn" onclick="showSection('contact')">Contact Us</button>
-  </div>
-</section>
+  <section class="hero">
+    <h1>Live Dosa, Pure Joy!</h1>
+    <p>Authentic South Indian Live Dosa Catering for Private Events</p>
+    <div class="actions">
+      <button class="btn solid" onclick="showSection('menu')">View Menu</button>
+      <button class="btn" onclick="showSection('contact')">Contact Us</button>
+    </div>
+  </section>
 
-<section class="section active">
-  <h2>Welcome to DosaMela – Live Dosa Catering with Authentic South Indian Flavour</h2>
-  <p>
-    At DosaMela, we bring the vibrant flavours of South India straight to your celebration with our live dosa station. Whether it’s a private party, cultural gathering, or family event, we make it unforgettable with dosas prepared fresh on-site, served hot off the griddle, and paired with a variety of flavourful chutneys and aromatic sambar.
-    <br><br>
-    Our focus is on authenticity, quality, and creating a unique food experience that brings people together. With every sizzle and swirl on the dosa pan, we recreate the magic of South India’s culinary heritage — right at your doorstep.
-    <br><br>
-    Let your guests enjoy the aroma, the taste, and the excitement of dosas made live — because great food isn't just eaten, it's experienced.
-    <br><br>
-    <strong>DosaMela – Live Dosa. Pure Joy!</strong>
-  </p>
-</section>
+  <section class="section active">
+    <h2>Welcome to DosaMela – Live Dosa Catering with Authentic South Indian Flavour</h2>
+    <p>
+      At DosaMela, we bring the vibrant flavours of South India straight to your celebration with our live dosa station.
+      Whether it’s a private party, cultural gathering, or family event, we make it unforgettable with dosas prepared
+      fresh on-site, served hot off the griddle, and paired with a variety of flavourful chutneys and aromatic sambar.
+      <br><br>
+      Our focus is on authenticity, quality, and creating a unique food experience that brings people together. With
+      every sizzle and swirl on the dosa pan, we recreate the magic of South India’s culinary heritage — right at your
+      doorstep.
+      <br><br>
+      Let your guests enjoy the aroma, the taste, and the excitement of dosas made live — because great food isn't just
+      eaten, it's experienced.
+      <br><br>
+      <strong>DosaMela – Live Dosa. Pure Joy!</strong>
+    </p>
+  </section>
 
-<section id="menu" class="section">
-  <h2>Our Menu</h2>
-  <div class="menu-item"><strong>Mysore Masala Dosa</strong>Dosa filled with spiced potato masala</div>
-  <div class="menu-item"><strong>Ghee Podi Dosa</strong>Dosa with flavorful spicy powder</div>
-  <div class="menu-item"><strong>Plain Dosa</strong>Simple and crispy!</div>
-  <div class="menu-item"><strong>Ghee Masala Dosa</strong>Dosa with onions and potato masala</div>
-  <div class="menu-item"><strong>Onion Dosa</strong>Topped with fresh onions</div>
-  <div class="menu-item"><strong>Onion Masala Dosa</strong>Dosa with onions and potato masala</div>
-  <div class="menu-item"><strong>Cheese Dosa</strong>Spread with cheese and mild spices</div>
-  <div class="menu-item"><strong>Chocolate Dosa</strong>Sweet treat for kids & dessert lovers</div>
-</section>
+  <section id="menu" class="section">
+    <h2>Our Menu</h2>
+    <div class="menu-item"><strong>Mysore Masala Dosa</strong>Dosa filled with spiced potato masala</div>
+    <div class="menu-item"><strong>Ghee Podi Dosa</strong>Dosa with flavorful spicy powder</div>
+    <div class="menu-item"><strong>Plain Dosa</strong>Simple and crispy!</div>
+    <div class="menu-item"><strong>Ghee Masala Dosa</strong>Dosa with onions and potato masala</div>
+    <div class="menu-item"><strong>Onion Dosa</strong>Topped with fresh onions</div>
+    <div class="menu-item"><strong>Onion Masala Dosa</strong>Dosa with onions and potato masala</div>
+    <div class="menu-item"><strong>Cheese Dosa</strong>Spread with cheese and mild spices</div>
+    <div class="menu-item"><strong>Chocolate Dosa</strong>Sweet treat for kids & dessert lovers</div>
+  </section>
 
-<section id="contact" class="section">
-  <h2>Contact Us</h2>
-  <div class="contact-card">
-    📞 <a href="tel:+13062167245">+1-306-216-7245</a><br><br>
-    📞 <a href="tel:+18254491610">+1-825-449-1610</a><br><br>
-    ✉️ <a href="mailto:dosamale2025@gmail.com">dosamale2025@gmail.com</a>
-  </div>
-</section>
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-card">
+      📞 <a href="tel:+13062167245">+1-306-216-7245</a><br><br>
+      📞 <a href="tel:+18254491610">+1-825-449-1610</a><br><br>
+      ✉️ <a href="mailto:ordersdosamela@gmail.com">ordersdosamela@gmail.com</a>
+    </div>
+  </section>
 
-<footer>
-  <div>Follow us</div>
-  <div class="social">
-    <a href="https://www.instagram.com/dosamela?igsh=MTVnOHB2b3RxODlibg%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4A3.8 3.8 0 0 0 20 16.2V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm10.1 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
-    </a>
-  </div>
-  <div style="margin-top:1rem">DosaMela – Live Dosa. Pure Joy!</div>
-</footer>
+  <footer>
+    <div>Follow us</div>
+    <div class="social">
+      <a href="https://www.instagram.com/dosamela?igsh=MTVnOHB2b3RxODlibg%3D%3D&utm_source=qr" target="_blank"
+        aria-label="Instagram">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4A3.8 3.8 0 0 0 20 16.2V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm10.1 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+        </svg>
+      </a>
+    </div>
+    <div style="margin-top:1rem">DosaMela – Live Dosa. Pure Joy!</div>
+  </footer>
 
-<a class="wa-float" href="#" onclick="return openWhatsApp();">💬 Book Event on WhatsApp</a>
+  <a class="wa-float" href="#" onclick="return openWhatsApp();">💬 Book Event on WhatsApp</a>
 
-<script>
-  function goHome(){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelector('.section.active, section.active')?.classList.remove('active');
-  document.querySelectorAll('.section')[0].classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+  <script>
+    function goHome() {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelector('.section.active, section.active')?.classList.remove('active');
+      document.querySelectorAll('.section')[0].classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-function showSection(id){
-    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    window.scrollTo({top:document.getElementById(id).offsetTop-80,behavior:'smooth'});
-  }
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: document.getElementById(id).offsetTop - 80, behavior: 'smooth' });
+    }
 
-  function openWhatsApp(){
-    var phone='13062167245';
-    var text="Hi DosaMela, I'd like to book a Live Dosa event. Please share availability, pricing, and requirements.";
-    var url='https://wa.me/'+phone+'?text='+encodeURIComponent(text);
-    window.open(url,'_blank');
-    return false;
-  }
-</script>
+    function openWhatsApp() {
+      var phone = '13062167245';
+      var text = "Hi DosaMela, I'd like to book a Live Dosa event. Please share availability, pricing, and requirements.";
+      var url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
+      window.open(url, '_blank');
+      return false;
+    }
+  </script>
 
 </body>
+
 </html>
